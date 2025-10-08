@@ -2,6 +2,8 @@
 
 A complete MERN Stack application for managing student attendance records. This system allows you to add students, mark their attendance, and view attendance reports.
 
+## Live Demo - https://studentattendancesystem-jpse.onrender.com/
+
 ## Features
 
 - ✅ Add, edit, and delete students
