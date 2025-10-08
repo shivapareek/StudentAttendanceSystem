@@ -13,19 +13,19 @@ const StudentList = ({ onEditStudent }) => {
   }, []);
 
   // Fetch all students
-  const fetchStudents = async () => {
-    try {
-      setLoading(true);
-      const response = await studentAPI.getAllStudents();
-      if (response.data.success) {
-        setStudents(response.data.data);
-      }
-    } catch (err) {
-      setError(err.response?.data?.message || 'Failed to fetch students');
-    } finally {
-      setLoading(false);
-    }
-  };
+const fetchStudents = async () => {
+  try {
+    setLoading(true);
+    const response = await studentAPI.getAllStudents();
+    console.log('API response:', response); // <-- check what is logged
+    setStudents(response.data.data || []); // <-- change here
+  } catch (err) {
+    setError(err.response?.data?.message || 'Failed to fetch students');
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   // Delete student
   const handleDelete = async (studentId, studentName) => {
