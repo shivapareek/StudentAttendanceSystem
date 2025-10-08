@@ -20,6 +20,12 @@ app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+});
+
 // Routes
 app.use('/api/students', studentRoutes);
 app.use('/api/attendance', attendanceRoutes);
