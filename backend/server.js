@@ -1,5 +1,3 @@
-// Load environment variables
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/database');
@@ -10,7 +8,8 @@ const path = require('path');
 const studentRoutes = require('./routes/students');
 const attendanceRoutes = require('./routes/attendance');
 
-
+// Load environment variables
+require('dotenv').config();
 
 // Connect to database
 connectDB();
